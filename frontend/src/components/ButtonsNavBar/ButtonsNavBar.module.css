@@ -1,0 +1,26 @@
+.buttons{
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-rows:100% ;
+    margin-top: 2em;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons > button{
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.disabled{
+    opacity: 0.5;
+}
+
+.active{
+    opacity: 1;
+}
