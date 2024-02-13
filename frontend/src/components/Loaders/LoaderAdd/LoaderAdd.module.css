@@ -1,0 +1,52 @@
+.loader{
+    display: flex;
+    padding: 1em 1em;
+    margin:0 -2em;
+    text-decoration: none;
+    align-items: center;
+    justify-content: space-between;
+    animation: blink 1.5s infinite ease;
+    background-color: rgba(128, 128, 128, 0.199);
+    margin-top: 1.5em;
+
+}
+
+.imageLoader{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: rgba(128, 128, 128, 0.493);
+    margin-right: 0.7em;
+}
+
+.nameLoader,.buttonLoader{
+    width: 100px;
+    height: 14px;
+    background-color: rgba(128, 128, 128, 0.493);
+    border-radius: 8px;
+    margin-bottom: 0.5em;
+}
+
+
+
+@keyframes blink{
+    0%{
+        opacity: 1;
+    }
+
+    25%{
+        opacity: 0.7;
+    }
+
+    50%{
+        opacity: 0.5;
+    }
+
+    75%{
+        opacity: 0.7;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}

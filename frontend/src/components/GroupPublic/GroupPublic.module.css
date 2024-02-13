@@ -1,0 +1,30 @@
+.group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.group > img{
+    width: 45px;
+    height: 45px;
+    background-color: #fff;
+    border-radius: 30px;
+}
+
+.group > p{
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    user-select: none;
+}
+
+.group > button,.added{
+    background-color: #0ea5a5;
+    border: none;
+    padding: 0.4em 0.8em;
+    border-radius: 20px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    font-size: 14px;
+}

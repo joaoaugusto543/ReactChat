@@ -1,6 +1,39 @@
 .home{
     background-color: #fff;
-    height: 100%;
-    width: 60%;
+    height: 80vh;
+    width: 70%;
     border-radius: 0px 20px 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@keyframes typing{
+    from{
+        width: 0ch;
+    }
+
+}
+
+@keyframes toMove{
+    from{
+        transform: translate(275px, 151px);
+    }
+
+}
+
+.home > h1{
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    width: 27ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 1.5s ease-in normal;
+    margin-bottom: 1em;
+}
+
+.home > img{
+    transform: translate(0px, 0px);
+    animation: toMove 1s ease-in-out normal;
 }

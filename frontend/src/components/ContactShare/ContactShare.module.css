@@ -1,0 +1,26 @@
+.contactShare{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    cursor: pointer;
+    background-color: #0ea5a5;
+    border-bottom:1px solid #fff ;
+    overflow-y: auto;
+}
+
+.contactShare:last-child{
+    border-color:transparent ;
+}
+
+.contactShare > img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    margin-right: 0.5em;
+    background-color: #fff;
+}
+
+.contactShare > p{
+    font-family: 'Roboto', sans-serif;
+}

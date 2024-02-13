@@ -15,7 +15,7 @@ const User= sequelize.define('User',{
         type:DataTypes.STRING,
         required:true
     },
-    profile_image:{
+    profileImage:{
         type:DataTypes.STRING,
         required:true,
         defaultValue:'https://res.cloudinary.com/dezsbjgjj/image/upload/v1706144110/p6uv3s57jyfatagksntg.png'
@@ -23,6 +23,21 @@ const User= sequelize.define('User',{
     code:{
         type:DataTypes.STRING,
         required:true
+    },
+    contacts:{
+        type:DataTypes.ARRAY(DataTypes.STRING),
+        required:true,
+        defaultValue:[]
+    },
+    groups:{
+        type:DataTypes.ARRAY(DataTypes.STRING),
+        required:true,
+        defaultValue:[]
+    },
+    notifications:{
+        type:DataTypes.ARRAY(DataTypes.STRING),
+        required:true,
+        defaultValue:[]
     }
 })
 

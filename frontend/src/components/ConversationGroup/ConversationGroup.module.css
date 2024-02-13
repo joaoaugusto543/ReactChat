@@ -1,0 +1,6 @@
+.conversationGroup{
+    min-height: 74%;
+    max-height:74% ;
+    overflow-y: scroll;
+    background-color: transparent;
+}

@@ -4,4 +4,5 @@ export interface CreateUserData{
     email:string,
     password:string,
     confirmPassword:string,
+    profileImage?:File
 }

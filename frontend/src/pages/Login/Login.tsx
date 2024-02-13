@@ -11,7 +11,7 @@ function Login() {
             <div className={styles.ad}>
                 <h2>Bem-vindo ao ReactChat</h2>
                 <img src={Chat} alt='chat' />
-                <h3>Realize o login para desfrutar de conversas enriquecedoras</h3>
+                <h3>Seu espaço de boas conversas</h3>
             </div>
             <div className={styles.formLogin}>
                 <h1>Login</h1>

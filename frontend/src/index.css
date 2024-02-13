@@ -4,7 +4,12 @@
   box-sizing: border-box;
 }
 
-input,textarea{
+textarea{
+  resize: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+input,textarea,select{
   outline: none;
 }
 
@@ -18,6 +23,5 @@ img{
 }
 
 body{
-  /* background:linear-gradient(120deg,#07a9ac,#0f6363);  */
-  background-color: aliceblue;
+  background-color: #fff;
 }

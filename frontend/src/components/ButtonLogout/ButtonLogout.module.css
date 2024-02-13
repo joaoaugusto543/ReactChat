@@ -1,0 +1,21 @@
+.logout{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    height: 30px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 18px;
+    color: #fff;
+    padding: 2em 1em;
+    cursor: pointer;
+  
+}
+
+.logout > svg{
+    font-size: 25px;
+    margin-right: 0.2em;
+}

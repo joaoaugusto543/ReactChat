@@ -1,0 +1,36 @@
+.user{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user > img{
+    width: 45px;
+    height: 45px;
+    background-color: #fff;
+    border-radius: 30px;
+}
+
+.user > p{
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    user-select: none;
+}
+
+.user > button{
+    background-color: #0ea5a5;
+    border: none;
+    padding: 0.4em 0.8em;
+    border-radius: 20px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.added{
+    color: rgb(3, 209, 3);
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+

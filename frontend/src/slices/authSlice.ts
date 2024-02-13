@@ -28,6 +28,14 @@ export const loginThunk=createAsyncThunk('auth/login',async (data:LoginInterface
 
 })
 
+export const logoutThunk=createAsyncThunk('auth/logout',async (_data)=>{
+    
+    localStorage.removeItem('user')
+    localStorage.removeItem('token')
+
+
+})
+
 
 const authSlice=createSlice({
     name:'auth',
@@ -47,6 +55,10 @@ const authSlice=createSlice({
         .addCase(loginThunk.rejected,(state,action)=>{
             state.loading=false
             state.error=action.payload
+        })
+        .addCase(logoutThunk.fulfilled,(state)=>{
+            state.user=null
+            state.token=null
         })
 
     }

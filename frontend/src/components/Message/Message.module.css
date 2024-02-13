@@ -1,0 +1,58 @@
+.message{
+    display: flex;
+    width: 100%;
+    margin-top: 1em;
+}
+
+.message > .divMessage:last-child{
+    margin-bottom: 2em;
+}
+
+.supplier > .divMessage{
+    margin-left: 1em;
+    color: #fff;
+}
+
+.divMessage{
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+    border-radius: 30px;
+    width: 50%;
+}
+
+.divMessage > span{
+    font-family: 'PT Sans', sans-serif;
+    color: #005d6b;
+}
+
+.divMessage > p{
+    word-wrap: break-word;
+    margin-top: 0.5em;
+    padding: 1em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    border-radius: 30px;
+}
+
+.supplier > .divMessage > p{
+    background-color:#0ea5a5 ;
+}
+
+.receive > .divMessage > p{
+    background-color: #01ffff;
+}
+
+.receive > .divMessage > span{
+    text-align: end;
+}
+
+
+.receive{
+    justify-content: end;
+}
+
+.receive > .divMessage{
+    margin-right: 1em;
+    color: #000;
+}
