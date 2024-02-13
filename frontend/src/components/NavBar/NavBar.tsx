@@ -1,23 +1,30 @@
-// import { NavLink } from 'react-router-dom'
 import Chat from '../../assets/chat.png'
 import styles from './NavBar.module.css'
-import { useReducer } from 'react'
+import { useReducer, useState } from 'react'
 import useReducerNavBar from '../../hooks/useReducerNavBar'
 import {TabState} from '../../interfaces/InterfaceReducerNavBar'
 import ButtonsNavBar from '../ButtonsNavBar/ButtonsNavBar'
 import FormSearch from '../FormSearch/FormSearch'
 import Tab from '../Tab/Tab'
+import useFetchUser from '../../hooks/useFetchUser'
+import useFetchGroups from '../../hooks/useFetchGroups'
+import ButtonLogout from '../ButtonLogout/ButtonLogout'
 
 const INITIAL_STATE:TabState={
-    placeholder:'Pesquisar contato',
+    placeholder:'Pesquisar nome do contato',
     tab:'contact'
 }
 
 function NavBar() {
- 
-  const reducer=useReducerNavBar()
+
+  const [search,setSearch]=useState<string>('')
+
+  const reducer=useReducerNavBar({setSearch})
 
   const [state,dispatch]=useReducer(reducer,INITIAL_STATE)
+
+  useFetchUser()
+  useFetchGroups()
 
   return (
     <nav className={styles.navBar}>
@@ -25,9 +32,10 @@ function NavBar() {
             <img src={Chat} alt='logo' />
             ReactChat
         </h1>
-        <FormSearch state={state}/>
+        <FormSearch setSearch={setSearch} search={search} state={state}/>
         <ButtonsNavBar dispatch={dispatch} state={state}/>
         <Tab state={state}/>
+        <ButtonLogout/>
     </nav>
   )
 }

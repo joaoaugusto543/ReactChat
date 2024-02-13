@@ -1,0 +1,31 @@
+.empty{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2em;
+}
+
+
+.empty > p{
+    color: #fff;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 20px;
+    margin-bottom: 1em;
+    width: 21ch;
+    overflow: hidden;
+    text-wrap: nowrap;
+}
+
+.empty > img{
+    width: 80px;
+    transform: translateY(0);
+    animation: moveUp 2s linear normal;
+}
+
+@keyframes moveUp{
+    from{
+        transform: translateY(200px);
+    }
+}

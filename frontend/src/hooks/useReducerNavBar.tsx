@@ -1,18 +1,24 @@
 import { TabAction, TabState } from '../interfaces/InterfaceReducerNavBar'
 
-function useReducerNavBar() {
+type Props={
+    setSearch:Function
+}
+
+function useReducerNavBar({setSearch}:Props) {
 
   function reducer(_state:TabState,action:TabAction){
+
+        setSearch('')
 
         switch(action.type){
             case 'CONTACT':
                 return{
-                    placeholder:'Pesquisar contato',
+                    placeholder:'Pesquisar nome do contato',
                     tab:'contact'
                 }
             case 'GROUPS':
                 return {
-                    placeholder:'Pesquisar grupo',
+                    placeholder:'Pesquisar nome do grupo',
                     tab:'groups'
                 }
                 
@@ -26,6 +32,11 @@ function useReducerNavBar() {
                 return {
                     placeholder:'Pesquisar notificação',
                     tab:'notification'
+                }
+            case 'ADD_GROUP':
+                return {
+                    placeholder:'Pesquisar nome do grupo',
+                    tab:'addGroup'
                 }
             default:
                 throw new Error('Invalid action')

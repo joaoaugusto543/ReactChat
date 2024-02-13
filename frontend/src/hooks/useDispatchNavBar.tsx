@@ -20,7 +20,11 @@ function useDispatchNavBar({dispatch}:Props) {
         dispatch({type:'NOTIFICATION'})
     }
 
-    return {handleSwitchAddContact,handleSwitchNotification,handleSwitchGroups,handleSwitchToContact}
+    async function handleSwitchAddGroup() {
+        dispatch({type:'ADD_GROUP'})
+    }
+
+    return {handleSwitchAddContact,handleSwitchNotification,handleSwitchGroups,handleSwitchToContact,handleSwitchAddGroup}
 
 }
 

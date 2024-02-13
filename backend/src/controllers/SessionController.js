@@ -9,7 +9,7 @@ class SessionController{
             const {email,password}=req.body
 
             const user= await User.findOne({
-                attributes:['name','email','profile_image','id','password'],
+                attributes:['name','email','profileImage','id','password','contacts'],
                 where:{email}
             })
 
@@ -23,12 +23,12 @@ class SessionController{
 
             const token=createToken(user.id)
 
-            const {name,profile_image,id}=user
+            const {name,profileImage,id}=user
 
             return res.status(200).json({
                 user:{
                     name,
-                    profile_image,
+                    profileImage,
                     id,
                     email
                 },

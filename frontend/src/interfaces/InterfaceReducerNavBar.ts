@@ -2,7 +2,8 @@ enum TabActionKind {
     CONTACT = 'CONTACT',
     GROUPS = 'GROUPS',
     ADD_CONTACT = 'ADD_CONTACT',
-    NOTIFICATION = 'NOTIFICATION'
+    NOTIFICATION = 'NOTIFICATION',
+    ADD_GROUP = 'ADD_GROUP'
 }
 
 export interface TabAction {

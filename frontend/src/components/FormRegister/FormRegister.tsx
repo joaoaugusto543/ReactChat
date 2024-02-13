@@ -4,6 +4,7 @@ import useHandleFile from '../../hooks/useHandleFile'
 import { useAppDispatch, useAppSelector } from '../../store'
 import { createUserThunk } from '../../slices/userSlice'
 import { loginThunk } from '../../slices/authSlice'
+import { CreateUserData } from '../../interfaces/CreateUserData'
 
 function FormRegister() {
 
@@ -13,7 +14,7 @@ function FormRegister() {
     const [confirmPassword,setConfirmePassword]=useState<string>('')
     const [profileImage,setProfileImage]=useState<File | null>(null)
 
-    const handleFile=useHandleFile({setProfileImage})
+    const handleFile=useHandleFile({set:setProfileImage})
 
     const dispatch=useAppDispatch()
 
@@ -32,12 +33,15 @@ function FormRegister() {
             return
         }
 
-        const user={
+        const user:CreateUserData={
             name,
             email,
             password,
-            confirmPassword,
-            profileImage
+            confirmPassword
+        }
+
+        if(profileImage){
+            user.profileImage=profileImage
         }
 
         dispatch(createUserThunk(user))
