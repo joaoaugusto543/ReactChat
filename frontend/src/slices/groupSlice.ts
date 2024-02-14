@@ -1,12 +1,14 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { addParticipantInPublicGroup, filterGroupsPublic, filterMyGroups, getGroup, getGroupsPublic, getMyGroups } from '../services/groupServices'
+import { addParticipantInPrivateGroup, addParticipantInPublicGroup, createGroup, filterGroupsPublic, filterMyGroups, getGroup, getGroupsPublic, getMyGroups } from '../services/groupServices'
 import { InitialStateGroup } from '../interfaces/InitialStateGroup'
+import { CreateGroupData } from '../interfaces/CreateGroupData'
 
 const initialState:InitialStateGroup={
     myGroups:[],
     groupsPublics:[],
     group:null,
     loading:false,
+    success:false,
     error:null
 }
 
@@ -43,6 +45,20 @@ export const addParticipantInPublicGroupThunk=createAsyncThunk('group/addPartici
     const {id,token}=data
 
     const res= await addParticipantInPublicGroup(id,token)
+
+    if(res.error){
+        return thunkApi.rejectWithValue(res.error)
+    }
+
+    return res
+
+})
+
+export const addParticipantInPrivateGroupThunk=createAsyncThunk('group/addParticipantInPrivateGroup',async (data:{id:string,idUser:string,token:string},thunkApi)=>{
+
+    const {id,idUser,token}=data
+
+    const res= await addParticipantInPrivateGroup(id,idUser,token)
 
     if(res.error){
         return thunkApi.rejectWithValue(res.error)
@@ -94,11 +110,29 @@ export const getGroupThunk=createAsyncThunk('group/getGroup',async (data:{id:str
 
 })
 
+export const createGroupThunk=createAsyncThunk('group/createGroup',async (data:{group:CreateGroupData,token:string},thunkApi)=>{
+
+    const {group,token}=data
+
+    const res= await createGroup(group,token)
+
+    if(res.error){
+        return thunkApi.rejectWithValue(res.error)
+    }
+
+    return res
+
+})
+
 
 const groupSlice=createSlice({
     name:'group',
     initialState,
-    reducers:{},
+    reducers:{
+        resetErrors:function(state){
+            state.error=null
+        }
+    },
     extraReducers:function(build){
         build
         .addCase(getGroupsPublicThunk.fulfilled,(state,action)=>{
@@ -182,8 +216,38 @@ const groupSlice=createSlice({
             state.error=action.payload
             state.loading=false
         })
+        .addCase(createGroupThunk.fulfilled,(state,action)=>{
+            state.myGroups=[action.payload,...state.myGroups]
+            state.error=null
+            state.loading=false
+            state.success=true
+        })
+        .addCase(createGroupThunk.pending,(state)=>{
+            state.error=null
+            state.loading=true
+        })
+        .addCase(createGroupThunk.rejected,(state,action)=>{
+            state.error=action.payload
+            state.loading=false
+            state.success=false
+        })
+        .addCase(addParticipantInPrivateGroupThunk.fulfilled,(state,action)=>{
+            if(state.myGroups && state.groupsPublics){
+                state.myGroups=[action.payload,...state.myGroups]
+            }
+            state.error=null
+            state.loading=false
+        })
+        .addCase(addParticipantInPrivateGroupThunk.pending,(state)=>{
+            state.error=null
+            state.loading=true
+        })
+        .addCase(addParticipantInPrivateGroupThunk.rejected,(state,action)=>{
+            state.error=action.payload
+            state.loading=false
+        })
     }
 })
 
-export const {}=groupSlice.actions
+export const {resetErrors}=groupSlice.actions
 export default groupSlice.reducer

@@ -11,7 +11,7 @@ function GroupPublic({group}:Props) {
 
   const {loading} = useAppSelector(state => state.group)
 
-  const addGroup= useAddGroup({id:group.id})
+  const {addGroupPublic}= useAddGroup({id:group.id})
 
   return (
     <>
@@ -19,7 +19,7 @@ function GroupPublic({group}:Props) {
         <div className={styles.group}>
           <img src={group.image} alt={group.name} />
           <p>{group.name}</p>
-          <button onClick={addGroup}>Entrar</button>
+          <button onClick={addGroupPublic}>Entrar</button>
         </div>
       }
     </>

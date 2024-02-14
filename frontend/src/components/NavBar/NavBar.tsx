@@ -9,6 +9,7 @@ import Tab from '../Tab/Tab'
 import useFetchUser from '../../hooks/useFetchUser'
 import useFetchGroups from '../../hooks/useFetchGroups'
 import ButtonLogout from '../ButtonLogout/ButtonLogout'
+import useFetchNotifications from '../../hooks/useFetchNotifications'
 
 const INITIAL_STATE:TabState={
     placeholder:'Pesquisar nome do contato',
@@ -25,6 +26,7 @@ function NavBar() {
 
   useFetchUser()
   useFetchGroups()
+  useFetchNotifications()
 
   return (
     <nav className={styles.navBar}>

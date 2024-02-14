@@ -22,7 +22,7 @@ function GroupsPublics() {
 
       { groupsPublics.length !==0 && groupsPublics.map((group)=><GroupPublic key={group.id} group={group}/>)}
 
-      { groupsPublics.length === 0  && <Empty text='Grupos não encontrados...'/>}
+      {!loading && groupsPublics.length === 0  && <Empty text='Grupos não encontrados...'/>}
       
     </div>
   )

@@ -4,6 +4,7 @@ const encryptPassword = require('../helpers/encryptPassword')
 const User = require('../models/User')
 const { Op } = require('sequelize')
 const Group = require('../models/Groups')
+const getContacts = require('../helpers/getContacts')
 
 class UserController{
 
@@ -111,29 +112,13 @@ class UserController{
     static async profile(req,res){
         try {
 
-            const {contacts,groups}=req.user
+            const {contacts}=req.user
 
-            const userContacts=[]
-
-            for(let i=0; contacts.length > i;i++){
-                const user=await User.findOne({raw:true,where:{id:contacts[i]},attributes:['id','name','profileImage']})
-
-                userContacts.push(user)
-            }
-
-            const groupsObjectArray=[]
-
-            for(let j=0; groups.length > j; j++){
-
-                const group=await Group.findOne({raw:true,where:{id:groups[j]},attributes:['id','name','image']})
-
-                groupsObjectArray.push(group)
-            }
+            const userContacts=await getContacts(contacts)
 
             const userUpdated={
                 ...req.user,
-                contacts:userContacts.reverse(),
-                groups:groupsObjectArray.reverse()
+                contacts:userContacts.reverse()
             }
 
             return res.status(200).json(userUpdated)
@@ -177,14 +162,7 @@ class UserController{
     
             const {contacts}=req.user
     
-            
-            const userContacts=[]
-            
-            for(let i=0; contacts.length > i;i++){
-                const user=await User.findOne({raw:true,where:{id:contacts[i]},attributes:['id','name','profileImage']})
-                
-                userContacts.push(user)
-            }
+            const userContacts=await getContacts(contacts)
             
             if(search === 'empty'){
                 return res.status(200).json(userContacts)
