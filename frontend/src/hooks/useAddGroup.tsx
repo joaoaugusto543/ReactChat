@@ -1,6 +1,6 @@
 
 import { useAppDispatch, useAppSelector } from '../store'
-import { addParticipantInPublicGroupThunk } from '../slices/groupSlice'
+import { addParticipantInPrivateGroupThunk, addParticipantInPublicGroupThunk } from '../slices/groupSlice'
 
 type Props={
     id:string
@@ -11,7 +11,7 @@ function useAddGroup({id}:Props) {
     const {token}=useAppSelector(state => state.auth)
     const dispatch=useAppDispatch()
 
-    function addGroup(){
+    function addGroupPublic(){
 
         if(!token){
             return
@@ -21,7 +21,17 @@ function useAddGroup({id}:Props) {
         return
     }
 
-    return addGroup
+    function addGroupPrivate(idUser:string){
+
+        if(!token){
+            return
+        }
+
+        dispatch(addParticipantInPrivateGroupThunk({id,idUser,token}))
+        return
+    }
+
+    return {addGroupPublic,addGroupPrivate}
 
 }
 

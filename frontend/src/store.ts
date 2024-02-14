@@ -4,6 +4,7 @@ import authReducer from './slices/authSlice'
 import groupReducer from './slices/groupSlice'
 import messageReducer from './slices/messageSlice'
 import messageGroupReducer from './slices/messageGroup'
+import notificationReducer from './slices/notificationSlice'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 
 const store=configureStore({
@@ -12,7 +13,8 @@ const store=configureStore({
         auth:authReducer,
         group:groupReducer,
         message:messageReducer,
-        messageGroup:messageGroupReducer
+        messageGroup:messageGroupReducer,
+        notification:notificationReducer
     }
 })
 

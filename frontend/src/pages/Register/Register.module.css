@@ -30,12 +30,12 @@
     margin-bottom: 0.5em;
 }
 
-.boxRegister > p{
+.link{
     color: #0ea5a5;
     margin-top: 2em;
     font-family: 'Roboto', sans-serif;
 }
 
-.boxRegister > p > a{
+.link > a{
     color: rgb(26, 179, 179);
 }

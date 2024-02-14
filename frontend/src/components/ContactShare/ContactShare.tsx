@@ -1,19 +1,35 @@
 import { ContactInterface } from '../../interfaces/ContactInterface'
-import { useAppSelector } from '../../store'
+import { CreateNotificationData } from '../../interfaces/CreateNotificationData'
+import { createNotificationThunk } from '../../slices/notificationSlice'
+import { useAppDispatch, useAppSelector } from '../../store'
 import styles from './ContactShare.module.css'
 
 type Props={
-    contact:ContactInterface
+    contact:ContactInterface,
+    setShowContactsShare:Function
 }
 
-function ContactShare({contact}:Props) {
+function ContactShare({contact,setShowContactsShare}:Props) {
 
   const {group} = useAppSelector(state => state.group)
+  const {token} =useAppSelector(state => state.auth)
 
+  const dispatch=useAppDispatch()
 
   function handleAddNotification(){
-    console.log(group?.publicGroup)
-    console.log(group?.id)
+
+    if(!group || !contact || !token){
+      return
+    }
+
+    const newNotification:CreateNotificationData={
+      idGroup:parseInt(group.id),
+      idUser:parseInt(contact.id)
+    }
+
+    dispatch(createNotificationThunk({notification:newNotification,token}))
+
+    setShowContactsShare(false)
   }
 
   return (

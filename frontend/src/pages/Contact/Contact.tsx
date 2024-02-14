@@ -12,6 +12,7 @@ import { MessageInterface } from '../../interfaces/MessageInterface'
 import useCreateMessage from '../../hooks/useCreateMessage'
 import useFetchMessages from '../../hooks/useFetchMessages'
 import LoaderConversation from '../../components/Loaders/LoaderConversation/LoaderConversation'
+import useVerifyContact from '../../hooks/useVerifyContact'
 
 function Contact() {
 
@@ -32,6 +33,7 @@ function Contact() {
   const createMessage=useCreateMessage()
 
   useFetchContact({id})
+  useVerifyContact({user,id})
 
   useConnSocket({setSocket})
 

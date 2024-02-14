@@ -35,7 +35,7 @@ class GroupController{
 
             await Group.create(newGroup)
 
-            const group=await Group.findOne({raw:true,where:{name}})
+            const group=await Group.findOne({raw:true,where:{name},attributes:['id','name','publicGroup','description','image']})
 
             user.groups=[...user.groups,group.id]
 
@@ -110,9 +110,13 @@ class GroupController{
 
         try {
 
-            const {id}=req.body
+            //idUser = id of the person who sent the invitation
+
+            const {id,idUser}=req.body
 
             const group=await Group.findOne({raw:true,where:{id}})
+
+            const userHost= await User.findOne({raw:true,where:{id:idUser},attributes:['id']})
 
             const user = req.user
 
@@ -126,6 +130,10 @@ class GroupController{
 
             if(group.participants.includes(String(user.id))){
                 return res.status(422).json({error:'Already a member of the group'})
+            }
+
+            if(!group.participants.includes(String(userHost.id))){
+                return res.status(422).json({error:'Unauthorized'})
             }
 
             user.groups.push(group.id)

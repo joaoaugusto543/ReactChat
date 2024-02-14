@@ -8,7 +8,7 @@ function Register() {
         <div className={styles.boxRegister}>
           <h1>Cadastro</h1>
           <FormRegister/>
-          <p>Já possui conta? <Link to='/login'>conecte-se</Link></p>
+          <p className={styles.link}>Já possui conta? <Link to='/login'>conecte-se</Link></p>
         </div>
     </section>
   )

@@ -1,0 +1,7 @@
+.notifications{
+    margin-top: 1em;
+}
+
+.notifications > div:last-child{
+    border-color:transparent ;
+}

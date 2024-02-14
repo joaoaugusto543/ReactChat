@@ -9,7 +9,9 @@ function createUserValidation(){
             .withMessage('Very long/small name'),
         body('email')
             .isString()
-            .withMessage('Email is required'),
+            .withMessage('Email is required')
+            .isEmail()
+            .withMessage('Invalid email'),
         body('password')
             .isString()
             .withMessage('Password is required')

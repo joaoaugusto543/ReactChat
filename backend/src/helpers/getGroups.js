@@ -8,7 +8,9 @@ async function getGroups(groups){
 
         const group=await Group.findOne({raw:true,where:{id:groups[i]},attributes:['id','name','image']})
 
-        groupsObjectArray.push(group)
+        if(group){
+            groupsObjectArray.push(group)
+        }
     }
 
     return groupsObjectArray

@@ -12,6 +12,7 @@ import { MessageGroupInterface } from '../../interfaces/MessageGroupInterface'
 import useFetchMessagesGroup from '../../hooks/useFetchMessagesGroup'
 import useFetchGroup from '../../hooks/useFetchGroup'
 import LoaderConversation from '../../components/Loaders/LoaderConversation/LoaderConversation'
+import useVerifyGroup from '../../hooks/useVerifyGroup'
 
 function Group() {
 
@@ -32,6 +33,8 @@ function Group() {
   useFetchGroup({id})
 
   useConnSocket({setSocket})
+
+  useVerifyGroup({group,id:user?.id})
 
   const createMessage=useCreateMessageGroup()
 

@@ -17,7 +17,7 @@ function ContactsShare({setShowContactsShare}:Props) {
         <div className={styles.box}>
             <h1>Contatos</h1>
             <div className={styles.contacts}>
-              {contactsShare.length !==0 && contactsShare.map((contact)=><ContactShare key={contact.id} contact={contact}/>)}
+              {contactsShare.length !==0 && contactsShare.map((contact)=><ContactShare key={contact.id} setShowContactsShare={setShowContactsShare} contact={contact}/>)}
             </div>
         </div>
     </section>

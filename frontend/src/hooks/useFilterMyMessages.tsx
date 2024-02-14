@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import {useLayoutEffect } from "react"
 import { UserInterface } from "../interfaces/UserInterface"
 import { MessageInterface } from "../interfaces/MessageInterface"
 
@@ -6,12 +6,12 @@ type Props={
     messages:MessageInterface[],
     id:number | undefined,
     setMyMessages:Function,
-    user:UserInterface | null
+    user:UserInterface | null,
 }
 
 function useFilterMyMessages({messages,id,setMyMessages,user}:Props) {
 
-    useEffect(()=>{
+    useLayoutEffect(()=>{
 
         if(!id || !user){
           return
@@ -26,7 +26,7 @@ function useFilterMyMessages({messages,id,setMyMessages,user}:Props) {
         })
     
         setMyMessages(messagesChat)
-    
+
     },[messages,id])
 
 }

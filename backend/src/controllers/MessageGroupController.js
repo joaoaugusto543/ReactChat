@@ -13,6 +13,7 @@ class MessageGroupController{
             const user=req.user
 
             if(!user.groups.includes(String(id))){
+                console.log('lope')
                 return res.status(401).json({error:'Unauthorized'})
             }
 
