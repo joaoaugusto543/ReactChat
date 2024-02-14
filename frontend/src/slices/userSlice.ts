@@ -130,6 +130,7 @@ const userSlice=createSlice({
             state.loading=true
         })
         .addCase(getUserByCodeThunk.rejected,(state,action)=>{
+            state.userCode=null
             state.error=action.payload
             state.loading=false
             state.success=false

@@ -25,3 +25,7 @@ img{
 body{
   background-color: #fff;
 }
+
+#root{
+  height: 100%;
+}

@@ -141,3 +141,57 @@
 .description > span{
     padding-bottom:0.5em ;
 }
+
+@media(max-width:1005px){
+    
+    .formGroup > label{
+        width: 100%;
+    }
+
+    
+    .formGroup > input{
+        width: 100px;
+        height: 23px;
+        font-size: 12px;  
+    }
+      
+    
+    #file{
+        width: 110px;
+        height: 110px;
+    }
+    
+   
+    #file > span{
+        font-size: 13px;
+    }
+    
+    #updateFile{
+        width: 100px;
+        height: 25px;
+    }
+    
+    #updateFile > span{
+        font-size: 13px;
+    }
+
+}
+
+@media(max-width:673px){
+    #file{
+        width: 90px;
+        height: 90px;
+        margin-bottom: 0.5em;
+    }
+   
+    #file > span{
+        font-size: 11px;
+    }
+
+    .previewImage{
+        width: 90px;
+        height: 90px;
+    }
+    
+
+}

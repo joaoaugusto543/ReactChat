@@ -54,3 +54,18 @@
     margin-left: 0.7em;
     cursor: pointer;
 }
+
+@media(max-width:770px){
+    .conversationForm > label > input{
+        height: 40px;
+    }
+    
+    .conversationForm > button{
+        height: 35px;
+        width: 35px;    
+    }
+
+    .conversationForm > button > svg{
+        height: 20px;    
+    }
+}

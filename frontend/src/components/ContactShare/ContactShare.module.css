@@ -24,3 +24,14 @@
 .contactShare > p{
     font-family: 'Roboto', sans-serif;
 }
+
+@media(max-width:500px){
+    .contactShare{
+        height: 70px;
+    }
+
+    .contactShare > img{
+        height: 40px;
+        width: 40px;
+    }
+}

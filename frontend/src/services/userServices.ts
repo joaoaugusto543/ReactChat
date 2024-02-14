@@ -17,7 +17,6 @@ export async function createUser(user:CreateUserData){
         return data
         
     } catch (error:any) {
-        console.log(error)
         return error.response.data
     }
 }
@@ -34,7 +33,6 @@ export async function getUserByCode(code:string,token:string){
         return data
 
     } catch (error:any) {
-        console.log(error)
         return error.response.data
     }
 }
@@ -51,7 +49,6 @@ export async function profile(token:string){
         return data
 
     } catch (error:any) {
-        console.log(error)
         return error.response.data
     }
 }
@@ -68,7 +65,6 @@ export async function addContact(token:string,code:string){
         return data
 
     } catch (error:any) {
-        console.log(error)
         return error.response.data
     }
 }
@@ -85,7 +81,6 @@ export async function filterContacts(token:string,search:string){
         return data
 
     } catch (error:any) {
-        console.log(error)
         return error.response.data
     }
 }
@@ -102,7 +97,6 @@ export async function getContact(token:string,id:string) {
         return data
 
     } catch (error:any) {
-        console.log(error)
         return error.response.data
     }
     

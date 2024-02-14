@@ -30,6 +30,7 @@ function NavBar() {
 
   return (
     <nav className={styles.navBar}>
+        <ButtonLogout/>
         <h1 className={styles.logo}>
             <img src={Chat} alt='logo' />
             ReactChat
@@ -37,7 +38,6 @@ function NavBar() {
         <FormSearch setSearch={setSearch} search={search} state={state}/>
         <ButtonsNavBar dispatch={dispatch} state={state}/>
         <Tab state={state}/>
-        <ButtonLogout/>
     </nav>
   )
 }

@@ -37,3 +37,71 @@
     transform: translate(0px, 0px);
     animation: toMove 1s ease-in-out normal;
 }
+
+@media(max-width:1107px){
+    .home{
+        min-height: 100vh;
+    }
+}
+
+@media(max-width:1005px){
+    .home{
+        width: 60%;
+        border-radius: 0;
+    }
+
+    .invisible{
+        height: 250px;
+    }
+      
+    .home > h1{
+        font-size: 25px;
+    }
+    
+    .home > img{
+        position: absolute;
+        width: 150px;
+    }
+
+    @keyframes toMove{
+        from{
+            position: fixed;
+            transform: translate(275px, 151px);
+        }
+    
+    }
+}
+
+@media(max-width:750px){
+    
+    .invisible{
+        height: 170px;
+    }
+      
+    .home > h1{
+        font-size: 20px;
+    }
+    
+    .home > img{
+        width: 100px;
+    }
+    
+}
+
+@media(max-width:673px){
+    .home{
+        width: 50%;
+    }
+
+    .invisible{
+        height: 150px;
+    }
+      
+    .home > h1{
+        font-size: 16px;
+    }
+    
+    .home > img{
+        width: 80px;
+    }
+}

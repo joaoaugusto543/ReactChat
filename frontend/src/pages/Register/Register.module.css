@@ -6,9 +6,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
+    overflow-y: auto;
 }
 
 .boxRegister{
@@ -38,4 +39,64 @@
 
 .link > a{
     color: rgb(26, 179, 179);
+}
+
+@media(max-width:740px){
+    
+    .boxRegister{
+        width: 400px;
+    }
+    
+    .boxRegister > h1{
+        font-size: 30px;
+    }
+    
+    .link{
+        font-size: 14px;
+    }
+
+    
+}
+
+@media(max-width:500px){
+    .boxRegister{
+        padding: 1.5em;
+        width: 300px;
+    }
+    
+    .boxRegister > h1{
+        font-size: 25px;
+    }
+    
+    .link{
+        margin-top: 1.5em;
+        font-size: 12px;
+    }
+}
+
+@media(max-width:355px){
+
+    .registerPage{
+        display: block;
+    }
+
+    .boxRegister{
+        width: 100%;
+        min-height: 100vh;
+        border-radius: 0;
+    }
+    
+    .boxRegister > h1{
+        font-size: 35px;
+    }
+    
+    .link{
+        font-size: 14px;
+    } 
+}
+
+@media(max-width:280px){
+      .boxRegister{
+        min-width: 280px;
+      }
 }

@@ -50,3 +50,17 @@
         opacity: 1;
     }
 }
+
+@media(max-width:1998px){
+    .loader{
+        margin: 0 -1em;
+        margin-top: 2em;
+    }
+}
+
+@media(max-width:800px){
+    .nameLoader,.buttonLoader{
+        width: 80px;
+    }
+    
+}

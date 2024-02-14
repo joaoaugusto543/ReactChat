@@ -11,7 +11,6 @@ export async function login(loginData:LoginInterface){
         return data
         
     } catch (error:any) {
-        console.log(error)
         return error.response.data
     }
 }

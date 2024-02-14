@@ -13,7 +13,6 @@ export async function createMessages(message:MessageInterface,token:string){
         return data
 
     } catch (error:any) {
-        console.log(error)
         return error.response.data
     }
 }
@@ -30,7 +29,6 @@ export async function getMessages(token:string,id:number){
         return data
 
     } catch (error:any) {
-        console.log(error)
         return error.response.data
     }
 }

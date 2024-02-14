@@ -4,7 +4,6 @@
     justify-content: center;
     flex-direction: column;
     padding: 1em;
-    margin: 0 -2em;
     border-bottom:1px solid #fff ;
 }
 
@@ -12,6 +11,8 @@
     font-family: 'Roboto', sans-serif;
     color: #fff;
     margin-bottom: 1em;
+    word-wrap: break-word;
+    max-width: 90%;
 }
 
 .buttons > button{
@@ -31,4 +32,17 @@
 .buttons > button:last-child{
     background-color: red;
     color: #fff;
+}
+
+@media(max-width:750px){
+
+    .notification > p{
+        font-size: 14px;
+    }
+    
+    .buttons > button{
+        width: 60px;
+        font-size: 12px;
+    }
+    
 }

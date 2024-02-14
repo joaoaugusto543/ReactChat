@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-      <Container>
+      <Container token={token}>
         {token && <NavBar/>}
         <Routes>
           <Route path='/' element={token ? <Home/> : <Navigate to='/login'/>}/>
