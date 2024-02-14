@@ -1,5 +1,5 @@
 .logout{
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     background-color: transparent;
@@ -18,4 +18,21 @@
 .logout > svg{
     font-size: 25px;
     margin-right: 0.2em;
+}
+
+@media(max-width:1155px){
+    .logout{
+        padding: 1.5em 1em;
+    }
+}
+
+@media(max-width:750px){
+
+    .logout{
+        font-size: 16px;
+    }
+
+    .logout > svg{
+        font-size: 20px;
+    }
 }

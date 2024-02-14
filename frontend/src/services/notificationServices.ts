@@ -13,7 +13,6 @@ export async function getNotifications(token:string){
         return data
 
     } catch (error:any) {
-        console.log(error)
         return error.response.data
     }
 }
@@ -30,7 +29,6 @@ export async function createNotification(notification:CreateNotificationData,tok
         return data
 
     } catch (error:any) {
-        console.log(error)
         return error.response.data
     }
 }
@@ -47,7 +45,6 @@ export async function updateView(id:string,token:string){
         return data
 
     } catch (error:any) {
-        console.log(error)
         return error.response.data
     }
 }

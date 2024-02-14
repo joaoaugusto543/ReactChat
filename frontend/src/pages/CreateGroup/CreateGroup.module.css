@@ -13,3 +13,29 @@
     text-shadow: 1px 0px 3px #222;
     margin-bottom: 0.5em;
 }
+
+@media(max-width:1005px){
+
+    .createGroup > h1{
+        font-size: 30px;
+    }
+
+    .createGroup{
+        width: 60%;
+        border-radius: 0;
+    }
+
+}
+
+@media(max-width:673px){
+
+    .createGroup > h1{
+        font-size: 25px;
+    }
+
+    .createGroup{
+        width: 50%;
+        padding: 3em 1.5em;
+    }
+
+}

@@ -63,3 +63,24 @@
         opacity: 1;
     }
 }
+
+@media(max-width:1198px){
+    .footer,.header{
+        border-radius: 0px;
+    }
+}
+
+@media(max-width:1005px){
+    .loaderConversation{
+        width: 60%;
+        border-radius: 0;
+    }
+
+}
+
+@media(max-width:673px){
+    .loaderConversation{
+        width: 50%;
+    }
+
+}

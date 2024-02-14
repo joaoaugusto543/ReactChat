@@ -14,7 +14,6 @@ export async function getMyGroups(token:string){
         
     } catch (error:any) {
 
-        console.log(error)
         return error.response.data
 
     }
@@ -34,7 +33,6 @@ export async function getGroupsPublic(token:string){
         
     } catch (error:any) {
 
-        console.log(error)
         return error.response.data
 
     }
@@ -53,7 +51,6 @@ export async function addParticipantInPublicGroup(id:string,token:string){
         
     } catch (error:any) {
 
-        console.log(error)
         return error.response.data
 
     }
@@ -72,7 +69,6 @@ export async function addParticipantInPrivateGroup(id:string,idUser:string,token
         
     } catch (error:any) {
 
-        console.log(error)
         return error.response.data
 
     }
@@ -91,7 +87,6 @@ export async function filterGroupsPublic(token:string,search:string){
         return data
 
     } catch (error:any) {
-        console.log(error)
         return error.response.data
     }
 }
@@ -109,7 +104,6 @@ export async function filterMyGroups(token:string,search:string){
         return data
 
     } catch (error:any) {
-        console.log(error)
         return error.response.data
     }
 }
@@ -128,7 +122,6 @@ export async function getGroup(token:string,id:string){
         return data
 
     } catch (error:any) {
-        console.log(error)
         return error.response.data
     }
 }
@@ -151,7 +144,6 @@ export async function createGroup(group:CreateGroupData,token:string){
         return data
 
     } catch (error:any) {
-        console.log(error)
         return error.response.data
     }
 }

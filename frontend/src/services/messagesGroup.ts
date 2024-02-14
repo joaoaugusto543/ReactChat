@@ -13,7 +13,6 @@ export async function createMessageGroup(message:MessageGroupInterface,token:str
         return data
 
     } catch (error:any) {
-        console.log(error)
         return error.response.data
     }
 }
@@ -31,7 +30,6 @@ export async function getMessagesGroup(token:string,id:number){
         return data
 
     } catch (error:any) {
-        console.log(error)
         return error.response.data
     }
 }

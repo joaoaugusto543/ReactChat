@@ -122,3 +122,164 @@
     margin-top: 0;
     font-size: 16px;
 }
+
+@media(max-width:740px){
+    
+    #file{
+        width: 100px;
+        height: 100px;
+    }
+    
+    #file > span{
+        font-size: 12px;
+    }
+    
+    
+    .formRegister > label > span{
+        font-size: 14px;
+    }
+    
+    .formRegister > label{
+        width: 100%;
+    }
+    
+    .formRegister > label > input{
+        height:30px;
+        font-size: 12px;
+ 
+    }
+    
+    .formRegister > input{
+        width: 100px;
+        height: 23px;
+    }
+    
+    .previewImage{
+        width: 100px;
+        height: 100px;
+    }
+    
+    #updateFile{
+        width: 100px;
+        height: 25px;
+    }
+    
+    #updateFile > span{
+        font-size: 12px;
+    }
+    
+    .error{
+        color: rgb(255, 0, 0);
+        font-family: 'Roboto', sans-serif;
+        font-size: 12px;
+        font-weight: bold;
+        margin-top: 0.5em;
+    }
+    
+    .unique{
+        font-size: 14px;
+    }
+}
+
+@media(max-width:500px){
+    #file{
+        width: 80px;
+        height: 80px;
+    }
+    
+    #file > span{
+        font-size: 11px;
+    }
+    
+    
+    .formRegister > label > span{
+        font-size: 12px;
+    }
+    
+    .formRegister > label{
+        width: 100%;
+    }
+    
+    .formRegister > label > input{
+        height:25px;
+        font-size: 11px;
+ 
+    }
+    
+    .formRegister > input{
+        width: 80px;
+        height: 20px;
+        font-size: 12px;
+    }
+    
+    .previewImage{
+        width: 80px;
+        height: 80px;
+    }
+    
+    #updateFile{
+        width: 90px;
+        height: 20px;
+    }
+    
+    #updateFile > span{
+        font-size: 11px;
+    }
+    
+    .error{
+        font-size: 11px;
+    }
+    
+    .unique{
+        font-size: 12px;
+    }
+}
+
+@media(max-width:355px){
+    #file{
+        width: 100px;
+        height: 100px;
+    }
+    
+    #file > span{
+        font-size: 11px;
+    }
+    
+    .formRegister > label > span{
+        font-size: 14px;
+    }
+        
+    .formRegister > label > input{
+        height:35px;
+        font-size: 12px;
+ 
+    }
+    
+    .formRegister > input{
+        width: 100px;
+        height: 25px;
+        font-size: 12px;
+    }
+    
+    .previewImage{
+        width: 100px;
+        height: 100px;
+    }
+    
+    #updateFile{
+        width: 100px;
+        height: 23px;
+    }
+    
+    #updateFile > span{
+        font-size: 12px;
+    }
+    
+    .error{
+        font-size: 12px;
+    }
+    
+    .unique{
+        font-size: 14px;
+    }
+}

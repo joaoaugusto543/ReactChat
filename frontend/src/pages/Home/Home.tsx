@@ -6,6 +6,7 @@ function Home() {
     <section className={styles.home}>
       <h1>&nbsp;Olá, seja bem-vindo ao ReactChat</h1>
       <img src={Bot} alt='robô' />
+      <div className={styles.invisible}/>
     </section>
   )
 }

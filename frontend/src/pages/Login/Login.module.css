@@ -6,9 +6,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
+    overflow-y: auto;
 }
 
 .boxLogin{
@@ -76,5 +77,110 @@
     width: 100%;
     padding: 1em 2em;
 
+}
+
+@media(max-width:1108px){
+    .boxLogin{
+        width: 600px;
+    }
+
+    .ad{
+        padding: 0;
+    }   
+    
+    .ad > h3{
+        font-size: 16px;
+    }
+
+    .ad > h2{
+        font-size: 20px;
+    }
+    
+    .ad > img{
+        width: 150px;
+    }
+    
+    .formLogin > h1{
+        font-size: 25px;
+    }
+    
+    .formLogin > p{
+        font-size: 14px;
+    }
+        
+
+}
+
+@media(max-width:759px){
+
+    .boxLogin{
+        width: 400px;
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+        height: 600px;
+    }  
+    
+    .ad{
+        border-radius: 30px 30px 300px 300px;
+    }
+
+    .ad > img{
+        margin: 0;
+    }
+
+    .ad > h3{
+        font-size: 18px;
+    }
+
+    .ad > h2{
+        font-size: 25px;
+    }
+
+}
+
+
+@media(max-width:500px){
+
+    .boxLogin{
+        width: 300px;
+    }
+
+    .ad{
+        border-radius: 30px 30px 300px 300px;
+    }
+
+    .ad > img{
+        width: 120px;
+    }
+
+    .ad > h3{
+        font-size: 16px;
+    }
+
+    .ad > h2{
+        font-size: 20px;
+    }
+}
+
+@media(max-width:360px){
+    .loginPage{
+        display: block;
+    }
+    
+    .boxLogin{
+        border-radius: 0px;
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    .ad{
+        border-radius: 0px 0px 300px 300px;
+    }
+}
+
+@media(max-width:259px){
+    .boxLogin{
+        min-width:259px ;
+    }
 }
 

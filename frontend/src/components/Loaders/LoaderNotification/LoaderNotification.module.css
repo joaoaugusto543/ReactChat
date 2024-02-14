@@ -60,3 +60,10 @@
         opacity: 1;
     }
 }
+
+@media(max-width:1998px){
+    .loaderNotification{
+        margin: 0 -1em;
+        margin-top: 2em;
+    }
+}
